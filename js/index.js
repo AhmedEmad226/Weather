@@ -43,9 +43,13 @@ searchBtn.addEventListener("click", function(){
 function readSearch(){
     searchAbout = searchInput.value
 }
+console.log(nowDay, nowDate, nowTemp, rainChance, windSpeed, windDirection, nowIcon); 
+
+
 
 async function fetchWeather() {
-    const respond = await fetch(`${baseURL}?key=${api}&q=${searchAbout}`);
+    // i guess it requests 3 days now....maybe
+    const respond = await fetch(`${baseURL}?key=${api}&q=${searchAbout}&days=3`);
     const final = await respond.json();
 
     let date = new Date(final.location.localtime)
@@ -63,13 +67,23 @@ async function fetchWeather() {
 
     //change 2
 
-    
+    const secondFetch = final.forecast.forecastday[1].day
 
     secondDay.innerHTML = days[(date.getDay() + 1) % 7];
-    secondIcon.setAttribute("src", `https:${final.forecast.forecastday[1].day.condition.icon}`); 
-    secondTemp_f.innerHTML = final.forecast.forecastday[1].day.avgtemp_f;
-    secondTemp_c.innerHTML = final.forecast.forecastday[1].day.avgtemp_c;
-    caseSecond.innerHTML = final.forecast.forecastday[1].day.condition.text;
+    secondIcon.setAttribute("src", `https:${secondFetch.condition.icon}`); 
+    secondTemp_f.innerHTML = secondFetch.avgtemp_f;
+    secondTemp_c.innerHTML = secondFetch.avgtemp_c;
+    caseSecond.innerHTML = secondFetch.condition.text;
 
+    //change 3
+
+    const thirdFetch = final.forecast.forecastday[2].day
+
+    thirdDay.innerHTML = days[(date.getDay() + 2) % 7];
+    thirdIcon.setAttribute("src", `https:${thirdFetch.condition.icon}`); 
+    thirdTemp_f.innerHTML = thirdFetch.avgtemp_f;
+    thirdTemp_c.innerHTML = thirdFetch.avgtemp_c;
+    caseThird.innerHTML = thirdFetch.condition.text;
+
+    console.log(final)
 }
-https://github.com/AhmedEmad226/Weather.git
