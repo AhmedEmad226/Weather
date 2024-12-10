@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+
+                    <!--  BootStrap  -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+                    <!--  Font Aweosome  -->
+    <link rel="stylesheet" href="css/all.min.css"> 
+                    <!--      main       -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+
+    <header>
+        <div class="logo">
+            <a href="index.html" class="d-flex flex-wrap logo-text">
+                <img src="assets/logo.png" class="blue-cloud object-fit-contain" alt="blue cloud">
+                <div class="w-50 p-2">
+                    <h1 class="size">Weather</h1>
+                    <p>Tagline goes here</p>
+                </div>
+            </a>
+        </div>
+        <div class="links">
+            <a href="#">Home</a>
+            <a href="#">News</a>
+            <a href="#">Live Cameras</a>
+            <a href="#">Photos</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </header>
+
+    <main class="container-fluid">
+        <div class="position-relative">
+
+            <div class="row banner h-50">
+                    <div><input type="search" placeholder="Find your location" class="searchInput" name="search" id="searchInput"><button type="submit" id="searchBtn" class="btn btn-primary position-absolute rounded-5">Search</button></div>
+            </div>
+            <div class="row bg-main-dark h-50 d-flex justify-content-center align-items-center">
+                <div class="weather-table">
+                    <div class="d-flex justify-content-between w-100">
+                        <div class="w-100 justify-content-center">
+                            <p class="weather-title p-3 jus m-0 border-top-left weather-title-1 d-flex justify-content-between">
+                                <span class="nowDay text-start">NowDay</span>
+                                <span class="nowDate text-end">NowDate</span>
+                            </p>
+                        </div>
+                        <div class="w-100">
+                            <p class="weather-title p-3 jus m-0 weather-title-2 text-center" id="secondDay">SecondDay</p>
+                        </div>
+                        <div class="w-100">
+                            <p class="weather-title p-3 jus m-0 border-top-right weather-title-1 text-center" id="thirdDay">ThirdDay</p>
+                        </div>
+                    </div>
+                    <div class="days d-flex justify-content-between w-100">
+                        <div class="day-weather p-4 day-weather-1 border-bottom-left">
+                            <p id="cityName">Giza</p>
+                            <p id="nowTemp" class="degree">22°23C</p>
+                            <img src="assets/113.png" id="nowIcon" alt="sun" class="sun">
+                            <span id="weatherCaseNow" class="text-primary">Sunny</span>
+                            <div class="weather-details">
+                                <br/>
+                                <img class="px-2" src="assets/umberella.png" alt="umberella"><span id="rainChance">20%</span>
+                                <img class="px-2" src="assets/wind.png" alt="wind"><span id="windSpeed">18km/h</span>
+                                <img class="px-2" src="assets/compass.png" alt="compass"><span id="windDirection">East</span>
+                            </div>
+                        </div>
+            
+                        <div class="day-weather p-4 text-center day-weather-2">
+                            <div class="img-container">
+                                <img src="assets/113.png" id="secondIcon" class="w-25" alt="sun">
+                            </div>
+                            <p id="secondTemp_f" class="m-0 font" >23°16C</p>
+                            <span id="secondTempl_c">14°16</span>
+                            <p  id="weatherCaseSecond" class="text-primary py-2">Sunny</p>
+                        </div>
+                        
+                        <div class="day-weather p-4 text-center day-weather-1 border-bottom-right">
+                            <div class="img-container">
+                                <img src="assets/cloudy.webp" id="thirdIcon" class="w-25" alt="sun">
+                            </div>
+                            <p id="thirdTemp_f" class="m-0" >52°11C</p>
+                            <span id="thirdTemp_c">26°35</span>
+                            <p  id="weatherCaseThird" class="text-primary py-2">Sunny</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-7">
+                    <input type="email" name="email" id="emailInput" placeholder="Enter your email to subscribe..."><button type="submit" class="btn btn-primary position-absolute rounded-5" id="subscribeBtn">Subscribe</button>
+                </div>
+                <div class="col-1"></div>
+                <div class="col-4 contact d-flex flex-wrap gap-3">
+                    <a href="#" class="d-flex justify-content-center align-items-center"><i class="fa-brands fa-facebook-f" style="color: var(--border-main);"></i></a>
+                    <a href="#" class="d-flex justify-content-center align-items-center"><i class="fa-brands fa-twitter" style="color: var(--border-main);"></i></a>
+                    <a href="#" class="d-flex justify-content-center align-items-center"><i class="fab fa-google-plus-g" style="color: var(--border-main);"></i></a>
+                    <a href="#" class="d-flex justify-content-center align-items-center"><i class="fa-brands fa-pinterest" style="color: var(--border-main);"></i></a>
+                </div>
+                <p class="my-2">Copyright 2014 Company name. Designed by Themezy. All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
