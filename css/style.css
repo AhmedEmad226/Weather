@@ -215,17 +215,18 @@ footer{
 }
 
 #message {
-    width: 48%;
-    height: 50%;
-    background-color: var(--second-color);
-    border: none;
+    width: 100%;
+    height: 46%;
+    background-color: transparent;
+    border: 2px solid gray;;
 }
 
 .forms input {
     width: 48%;
-    border-color: gray;
+    margin: 3px;
+    border: 2px solid gray;
 }
 
-.forms input:focus{
+.forms input:hover, #message {
     border-color: var(--border-main);
 }
